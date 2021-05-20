@@ -17,9 +17,9 @@ import EDA
 
 ######################################################Data##############################################################
 
-df = pd.read_csv("teste.csv")
-df["Year"] = df["Date"].str.split("-").str[0]
-df['Date'] = pd.to_datetime(df['Date'])
+#df = pd.read_csv("teste.csv")
+#df["Year"] = df["Date"].str.split("-").str[0]
+#df['Date'] = pd.to_datetime(df['Date'])
 
 ######################################################Interactive Components############################################
 
