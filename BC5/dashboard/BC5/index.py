@@ -48,7 +48,7 @@ logo = dbc.Navbar(
             dbc.NavbarToggler(id="navbar-toggler2"),
             dbc.Collapse(
                 dbc.Nav(
-                    [nav_item_EDA, nav_item_MBA, nav_item_forecast], className="ml-auto", navbar=True
+                    [nav_item_EDA, nav_item_MBA, nav_item_forecast,nav_item_forecast_pos,nav_item_forecast_prod], className="ml-auto", navbar=True
                 ),
                 id="navbar-collapse2",
                 navbar=True,
@@ -77,9 +77,9 @@ def render_page_content(pathname):
         return MBA.layout
     elif pathname == "/forecast":
         return forecast.layout
-    elif pathname == "/forecast(pos)":
+    elif pathname == "/forecast_pos":
         return forecast_pos.layout
-    elif pathname == "/forecast":
+    elif pathname == "/forecast_prod":
         return forecast_prod.layout
     return dbc.Jumbotron(
         [
