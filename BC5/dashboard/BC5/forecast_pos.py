@@ -40,7 +40,7 @@ layout = dbc.Container([
             dcc.Dropdown(
                 id='pos_drop',
                 options=pos_options,
-                value=[28],
+                value=[292],
                 multi=True)
         ], width=12, className="mb-3")
     ),

@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e6468af-6744-4d4e-a0cc-e73e31ed9d5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Forecast.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Forecast.ipynb" afterDir="false" />
+    <list default="true" id="5e6468af-6744-4d4e-a0cc-e73e31ed9d5d" name="Default Changelist" comment="Update Forecast - Dash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BC5/forecast.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BC5/forecast_pos.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast_pos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BC5/forecast_prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast_prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BC5/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/index.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621529722259</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update Forecast - Dash">
+      <created>1621615778860</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621615778860</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +162,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Forecast - Dash e IPYNB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Forecast - Dash e IPYNB" />
+    <MESSAGE value="Update Forecast - Dash" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Forecast - Dash" />
   </component>
 </project>
