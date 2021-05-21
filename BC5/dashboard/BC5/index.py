@@ -12,11 +12,17 @@ import plotly.express as px
 import EDA
 import MBA
 import forecast
+import forecast_pos
+import forecast_prod
+
+
 from app import app
 
 nav_item_EDA = dbc.NavItem(dbc.NavLink("EDA", href="/EDA", active="exact"))
 nav_item_MBA = dbc.NavItem(dbc.NavLink("MBA", href="/MBA", active="exact"))
 nav_item_forecast = dbc.NavItem(dbc.NavLink("Forecast", href="/forecast", active="exact"))
+nav_item_forecast_pos = dbc.NavItem(dbc.NavLink("Forecast(POS)", href="/forecast_pos", active="exact"))
+nav_item_forecast_prod = dbc.NavItem(dbc.NavLink("Forecast(Prod)", href="/forecast_prod", active="exact"))
 
 
 CONTENT_STYLE = {
@@ -71,6 +77,10 @@ def render_page_content(pathname):
         return MBA.layout
     elif pathname == "/forecast":
         return forecast.layout
+    elif pathname == "/forecast(pos)":
+        return forecast_pos.layout
+    elif pathname == "/forecast":
+        return forecast_prod.layout
     return dbc.Jumbotron(
         [
             html.H1("404: Not found", className="text-danger"),
