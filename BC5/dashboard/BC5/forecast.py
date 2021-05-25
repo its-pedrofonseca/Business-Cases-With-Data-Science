@@ -31,30 +31,30 @@ dates = lim_df.index
 pos_options = [dict(label=pos, value=pos) for pos in fdf['Point-of-Sale_ID'].dropna().unique()]
 pid_options = [dict(label=pid, value=pid) for pid in fdf['ProductName_ID'].dropna().unique()]
 
-######################################################Layout############################################
+#########################################################Layout#########################################################
 layout = dbc.Container([
     dbc.Row([
         dbc.Col([
-            html.H2('Forecast by Point-of-Sale', className='text-center ')
+            html.H2('Forecast by Point-of-Sale & Product', className='text-center ')
         ], width=12)
     ]),
     dbc.Row([
         dbc.Col([
-            html.H6("Point-Of-Sale Choice", className='text-left text mb-4 ml-4'),
+            html.H6("Point-Of-Sale Choice",style={'text-align': 'center'}),
             dcc.Dropdown(
                 id='pos_drop',
                 options=pos_options,
                 value=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
                 multi=True)
-        ], width=12, className="mb-3"),
+        ], width=6, className="mb-3"),
         dbc.Col([
-            html.H6("Product Choice", className='text-left text mb-4 ml-4'),
+            html.H6("Product Choice",style={'text-align': 'center'}),
             dcc.Dropdown(
                 id='pid_drop',
                 options=pos_options,
                 value=[292,2609,2802,420],
                 multi=True)
-        ], width=12, className="mb-3")
+        ], width=6, className="mb-3"),
     ]),
     dbc.Row([
         dbc.Col([
