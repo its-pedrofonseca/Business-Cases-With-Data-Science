@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e6468af-6744-4d4e-a0cc-e73e31ed9d5d" name="Default Changelist" comment="Update Forecast - POS - Dash">
-      <change beforePath="$PROJECT_DIR$/BC5/forecast.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast.py" afterDir="false" />
-    </list>
+    <list default="true" id="5e6468af-6744-4d4e-a0cc-e73e31ed9d5d" name="Default Changelist" comment="Update Forecast - POS - Dash" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621617061186</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update Forecast - POS - Dash">
+      <created>1621979429514</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621979429514</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
