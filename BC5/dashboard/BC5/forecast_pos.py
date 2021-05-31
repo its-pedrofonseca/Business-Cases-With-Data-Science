@@ -17,10 +17,12 @@ import EDA
 
 ######################################################Data##############################################################
 
-vdf = pd.read_csv('C:/Users/migue/Desktop/unit_df.csv')
+vdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/unit_df.csv')
+#vdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
 vdf['week'] = pd.to_datetime(vdf['week'], format='%Y-%m-%d')
 
-pdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
+pdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/product_df.csv')
+#pdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
 pdf['week'] = pd.to_datetime(pdf['week'], format='%Y-%m-%d')
 
 ######################################################Interactive Components############################################

@@ -17,7 +17,8 @@ import EDA
 
 ######################################################Data##############################################################
 
-fdf = pd.read_csv('C:/Users/migue/Desktop/forecast_df.csv')
+fdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/forecast_pos_pid_dash.csv')
+#fdf = pd.read_csv('C:/Users/migue/Desktop/forecast_df.csv')
 fdf['week'] = pd.to_datetime(fdf['week'], format='%Y-%m-%d')
 
 weekly=fdf.groupby('week')['Units'].sum()[1:-1]
@@ -28,6 +29,7 @@ lim_df = forecast[start_date:end_date]
 dates = lim_df.index
 
 ######################################################Interactive Components############################################
+
 pos_options = [dict(label=pos, value=pos) for pos in fdf['Point-of-Sale_ID'].dropna().unique()]
 pid_options = [dict(label=pid, value=pid) for pid in fdf['ProductName_ID'].dropna().unique()]
 

@@ -17,13 +17,16 @@ import EDA
 
 ######################################################Data##############################################################
 
-#df = pd.read_csv("teste.csv")
-#df["Year"] = df["Date"].str.split("-").str[0]
-#df['Date'] = pd.to_datetime(df['Date'])
+df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/eda_dash.csv")
+
+
+df["Year"] = df["Date"].str.split("-").str[0]
+df['Date'] = pd.to_datetime(df['Date'])
 
 ######################################################Interactive Components############################################
 
-points_of_sale = ["1", "2", "3", "4"]
+points_of_sale = ["1", "2", "3", "4", '5',   '6',   '7',   '8',   '9',  '10',  '11',  '12',  '13',
+        '14',  '15',  '16',  '17',  '18',  '19',  '20']
 
 pos_options = [dict(label='' + pos, value=pos) for pos in points_of_sale]
 

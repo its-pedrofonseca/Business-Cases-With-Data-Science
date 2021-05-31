@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e6468af-6744-4d4e-a0cc-e73e31ed9d5d" name="Default Changelist" comment="Update Forecast - POS - Dash" />
+    <list default="true" id="5e6468af-6744-4d4e-a0cc-e73e31ed9d5d" name="Default Changelist" comment="Update Forecast - POS - Dash">
+      <change afterPath="$PROJECT_DIR$/BC5/cluster_pos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BC5/cluster_product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BC5/cluster_value.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MBA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../MBA.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/EDA.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/EDA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/MBA.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/MBA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/forecast.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/forecast_pos.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast_pos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/forecast_prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast_prod.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/index.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -19,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../IMS/2o semestre/DV/Lab06" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.index (1)">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">

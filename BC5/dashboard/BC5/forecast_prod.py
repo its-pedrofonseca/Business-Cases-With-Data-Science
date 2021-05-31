@@ -16,7 +16,9 @@ from app import server
 import EDA
 
 ######################################################Data##############################################################
-pdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
+pdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/product_df.csv')
+
+#pdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
 pdf['week'] = pd.to_datetime(pdf['week'], format='%Y-%m-%d')
 
 weekly=pdf.groupby('week')['Units'].sum()[1:-1]
