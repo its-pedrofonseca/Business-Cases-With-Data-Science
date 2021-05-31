@@ -20,43 +20,37 @@ import EDA
 
 ######################################################Data##############################################################
 
-df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/mba_dash.csv")
+#df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/mba_dash.csv")
+df = pd.read_csv("C:/Users/migue/Desktop/mba_dash.csv")
 
 ######################################################Interactive Components############################################
 
-points_of_sale = ["1", "2", "3", "4", '5',   '6',   '7',   '8',   '9',  '10',  '11',  '12',  '13',
-        '14',  '15',  '16',  '17',  '18',  '19',  '20']
-
-pos_options = [dict(label='' + pos, value=pos) for pos in points_of_sale]
+pos_options = [dict(label=pos, value=pos) for pos in df['Point-of-Sale_ID'].dropna().unique()]
 
 pos_dropdown = dcc.Dropdown(
     id='pos_drop',
     options=pos_options,
-    value='1',
+    value=1,
     persistence=True,
     persistence_type='session'
 )
 
-quarters = ["1", "2", "3"]
-
-quarters_options = [dict(label='' + quarter, value=quarter) for quarter in quarters]
+quarters_options = [dict(label=quarter, value=quarter) for quarter in df['Quarter'].dropna().unique()]
 
 quarters_dropdown = dcc.Dropdown(
     id='quarters_drop',
     options=quarters_options,
-    value='1',
+    value=1,
     persistence=True,
     persistence_type='session'
 )
 
-years = ["2016"]
-
-years_options = [dict(label='' + year, value=year) for year in years]
+years_options = [dict(label=year, value=year) for year in df['Year'].dropna().unique()]
 
 years_dropdown = dcc.Dropdown(
     id='years_drop',
     options=years_options,
-    value='2016',
+    value=2016,
     persistence=True,
     persistence_type='session'
 )
@@ -147,12 +141,12 @@ def graph_1(pos, quarter, year):
                         )
 
     layout = dict(
-        paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)',
+        #paper_bgcolor='rgba(0,0,0,0)',
+        #plot_bgcolor='rgba(0,0,0,0)',
         xaxis_title="Lift",
         yaxis_title="Confidence"
     )
 
-    fig = go.Figure(data=data_scatter, layout=layout)
+    mbafig = go.Figure(data=data_scatter, layout=layout)
 
-    return fig
+    return mbafig

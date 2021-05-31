@@ -16,9 +16,9 @@ from app import server
 import EDA
 
 ######################################################Data##############################################################
-pdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/product_df.csv')
+#pdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/product_df.csv')
 
-#pdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
+pdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
 pdf['week'] = pd.to_datetime(pdf['week'], format='%Y-%m-%d')
 
 weekly=pdf.groupby('week')['Units'].sum()[1:-1]
@@ -116,9 +116,9 @@ def graph_pred(pid):
         model = SARIMAX(train_data, order=my_order, seasonal_order=my_seasonal_order)
         model_fit = model.fit()
         # Get the predictions and residuals
-        predictions = model_fit.forecast(steps=len(test_data))
-        predictions = pd.Series(predictions, index=test_data.index)
-    residuals = test_data - predictions
+        predictions = model_fit.forecast(steps=len(test_data)+6)
+        #predictions = pd.Series(predictions, index=test_data.index)
+    #residuals = test_data - predictions
 
     prod_forecast = go.Figure()
     prod_forecast.add_trace(go.Scatter(x=lim_df.index, y=lim_df,

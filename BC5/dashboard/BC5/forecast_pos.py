@@ -17,13 +17,9 @@ import EDA
 
 ######################################################Data##############################################################
 
-vdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/unit_df.csv')
-#vdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
+#vdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/unit_df.csv')
+vdf = pd.read_csv('C:/Users/migue/Desktop/unit_df.csv')
 vdf['week'] = pd.to_datetime(vdf['week'], format='%Y-%m-%d')
-
-pdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/product_df.csv')
-#pdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
-pdf['week'] = pd.to_datetime(pdf['week'], format='%Y-%m-%d')
 
 ######################################################Interactive Components############################################
 pos_options = [dict(label=pos, value=pos) for pos in vdf['Point-of-Sale_ID'].dropna().unique()]
@@ -49,7 +45,7 @@ layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             dbc.Card(
-                dcc.Graph(id='fig'), body=True, color="#31343b"
+                dcc.Graph(id='figpos'), body=True, color="#31343b"
             )
         ], width={'size': 10}, className="mb-5 mt-3"),
         dbc.Col([
@@ -78,7 +74,7 @@ layout = dbc.Container([
 ], fluid=True)
 
 @app.callback(
-    Output('fig', 'figure'),
+    Output('figpos', 'figure'),
     Input('pos_drop', 'value')
 )
 def graph_pred(pos):
@@ -108,19 +104,18 @@ def graph_pred(pos):
     model = SARIMAX(train_data, order=my_order, seasonal_order=my_seasonal_order)
     model_fit = model.fit()
     # Get the predictions and residuals
-    predictions = model_fit.forecast(steps=len(test_data))
-    predictions = pd.Series(predictions, index=test_data.index)
+    predictions = model_fit.forecast(steps=len(test_data)+6)
+    #predictions = pd.Series(predictions, index=test_data.index)
     #residuals = test_data - predictions
 
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=lim_df.index, y=lim_df,
+    figpos = go.Figure()
+    figpos.add_trace(go.Scatter(x=lim_df.index, y=lim_df,
                              mode='lines',
                              name='TimeSeries'))
-    fig.add_trace(go.Scatter(x=predictions.index, y=predictions,
+    figpos.add_trace(go.Scatter(x=predictions.index, y=predictions,
                              mode='lines',
                              name='Predictions'))
-    bs = fig
-    return bs
+    return figpos
 
 @app.callback(
     [

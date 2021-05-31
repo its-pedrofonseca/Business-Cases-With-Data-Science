@@ -17,8 +17,8 @@ import EDA
 
 ######################################################Data##############################################################
 
-df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/eda_dash.csv")
-
+#df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/eda_dash.csv")
+df = pd.read_csv('C:/Users/migue/Desktop/eda_dash.csv')
 
 df["Year"] = df["Date"].str.split("-").str[0]
 df['Date'] = pd.to_datetime(df['Date'])
@@ -108,13 +108,13 @@ layout = dbc.Container([
         dbc.Col([
             dbc.Card(
                 dcc.Graph(id='graph_value', style={'height': 500}),
-                body=True, color="#000000"
+                body=True, color="#31343b"
             )
         ], width={'size': 6}),
         dbc.Col([
             dbc.Card(
                 dcc.Graph(id='graph_prod_fam', style={'height': 500}),
-                body=True, color="#000000"
+                body=True, color="#31343b"
             )
         ], width={'size': 6})
     ], className="my-2"),
@@ -122,13 +122,13 @@ layout = dbc.Container([
         dbc.Col([
             dbc.Card(
                 dcc.Graph(id='graph_market_share', style={'height': 500}),
-                body=True, color="#000000"
+                body=True, color="#31343b"
             )
         ], width={'size': 6}),
         dbc.Col([
             dbc.Card(
                 dcc.Graph(id='graph_market_share2', style={'height': 500}),
-                body=True, color="#000000"
+                body=True, color="#31343b"
             )
         ], width={'size': 6})
     ], className="my-2"),

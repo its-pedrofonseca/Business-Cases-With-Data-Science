@@ -1,7 +1,7 @@
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-from dash.dependencies import Input, Output, State
+from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
@@ -12,13 +12,11 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 
 from app import app
-from app import server
-import EDA
 
 ######################################################Data##############################################################
 
-fdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/forecast_pos_pid_dash.csv')
-#fdf = pd.read_csv('C:/Users/migue/Desktop/forecast_df.csv')
+#fdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/forecast_pos_pid_dash.csv')
+fdf = pd.read_csv('C:/Users/migue/Desktop/forecast_pos_pid_dash.csv')
 fdf['week'] = pd.to_datetime(fdf['week'], format='%Y-%m-%d')
 
 weekly=fdf.groupby('week')['Units'].sum()[1:-1]
@@ -46,15 +44,15 @@ layout = dbc.Container([
             dcc.Dropdown(
                 id='pos_drop',
                 options=pos_options,
-                value=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                value=[62,72,359,48,282,383,103,92,272,280,78,292],
                 multi=True)
         ], width=6, className="mb-3"),
         dbc.Col([
             html.H6("Product Choice",style={'text-align': 'center'}),
             dcc.Dropdown(
                 id='pid_drop',
-                options=pos_options,
-                value=[292,2609,2802,420],
+                options=pid_options,
+                value=[1277],
                 multi=True)
         ], width=6, className="mb-3"),
     ]),
@@ -128,9 +126,9 @@ def forecast_by_POS_and_PID(pos, pid):
         model = SARIMAX(train_data, order=my_order, seasonal_order=my_seasonal_order)
         model_fit = model.fit()
         # Get the predictions and residuals
-        predictions = model_fit.forecast(steps=len(test_data))
-        predictions = pd.Series(predictions, index=test_data.index)
-    residuals = test_data - predictions
+        predictions = model_fit.forecast(steps=len(test_data)+6)
+        #predictions = pd.Series(predictions, index=test_data.index)
+    #residuals = test_data - predictions
 
     fig_all = go.Figure()
     fig_all.add_trace(go.Scatter(x=lim_df.index, y=lim_df,
@@ -153,7 +151,7 @@ def forecast_by_POS_and_PID(pos, pid):
     ]
 )
 def kpi_by_POS_and_PID(pid, pos):
-    # Setting up the group by on the ProductName_ID and POS_ID
+    # Setting up the group by on the ProductName_ID
     grouped = fdf[fdf['ProductName_ID'].isin(pid)][fdf['Point-of-Sale_ID'].isin(pos)].groupby('week')['Units'].sum()
     grouped = pd.Series(grouped, index=dates).fillna(0)
     # removing the first and last date for lack of values
@@ -166,8 +164,6 @@ def kpi_by_POS_and_PID(pid, pos):
     start_date = datetime(2016, 1, 1)
     end_date = datetime(2019, 11, 1)
     lim_df = forecast[start_date:end_date]
-    # Get First Diferences to eliminate Trend
-    first_diff = lim_df.diff()[1:]
 
     # Set Train and Test Values
     train_end = datetime(2019, 8, 30)
@@ -182,12 +178,12 @@ def kpi_by_POS_and_PID(pid, pos):
     model = SARIMAX(train_data, order=my_order, seasonal_order=my_seasonal_order)
     model_fit = model.fit()
     # Get the predictions and residuals
-    predictions = model_fit.forecast(steps=len(test_data))
-    predictions = pd.Series(predictions, index=test_data.index)
-    residuals = test_data - predictions
+    predictions_all = model_fit.forecast(steps=len(test_data))
+    predictions_all = pd.Series(predictions_all, index=test_data.index)
+    residuals_all = test_data - predictions_all
 
-    MAPE = round(np.mean(abs(residuals / test_data)), 4)
-    RMSE = round(np.sqrt(np.mean(residuals ** 2)), 4)
+    MAPE_all = round(np.mean(abs(residuals_all/test_data)),4)
+    RMSE_all = round(np.sqrt(np.mean(residuals_all ** 2)), 4)
 
-    return str(MAPE),\
-           str(RMSE)
+    return str(MAPE_all),\
+           str(RMSE_all)
