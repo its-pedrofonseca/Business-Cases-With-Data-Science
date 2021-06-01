@@ -18,7 +18,8 @@ import EDA
 ######################################################Data##############################################################
 
 #vdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/unit_df.csv')
-vdf = pd.read_csv('C:/Users/migue/Desktop/unit_df.csv')
+#vdf = pd.read_csv('C:/Users/migue/Desktop/unit_df.csv')
+vdf = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/unit_df.csv")
 vdf['week'] = pd.to_datetime(vdf['week'], format='%Y-%m-%d')
 
 ######################################################Interactive Components############################################

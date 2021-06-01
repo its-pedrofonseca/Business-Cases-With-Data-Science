@@ -54,7 +54,8 @@ logo = dbc.Navbar(
             dbc.Collapse(
                 dbc.Nav(
                     [nav_item_EDA, nav_item_MBA, nav_item_forecast,nav_item_forecast_pos,
-                     nav_item_forecast_prod, nav_item_cluster_pos, nav_item_cluster_value,
+                     nav_item_forecast_prod,
+                     nav_item_cluster_pos, nav_item_cluster_value,
                      nav_item_cluster_product], className="ml-auto", navbar=True
                 ),
                 id="navbar-collapse2",
@@ -77,8 +78,8 @@ app.layout = html.Div(
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def render_page_content(pathname):
     if pathname == "/":
-        return EDA.layout
-    if pathname == "/EDA":
+       return EDA.layout
+    elif pathname == "/EDA":
         return EDA.layout
     elif pathname == "/MBA":
         return MBA.layout

@@ -16,7 +16,8 @@ from app import app
 ######################################################Data##############################################################
 
 #fdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/forecast_pos_pid_dash.csv')
-fdf = pd.read_csv('C:/Users/migue/Desktop/forecast_pos_pid_dash.csv')
+#fdf = pd.read_csv('C:/Users/migue/Desktop/forecast_pos_pid_dash.csv')
+fdf= pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/forecast_pos_pid_dash.csv")
 fdf['week'] = pd.to_datetime(fdf['week'], format='%Y-%m-%d')
 
 weekly=fdf.groupby('week')['Units'].sum()[1:-1]

@@ -1,32 +1,23 @@
-import dash
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-from dash.dependencies import Input, Output, State
-import numpy as np
-import pandas as pd
+from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
-import plotly.express as px
-import datetime as dt
 from mlxtend.frequent_patterns import apriori
 from mlxtend.frequent_patterns import association_rules
-import matplotlib.pyplot as plt
-import networkx as nx
 
 from app import app
-from app import server
-import EDA
+
 
 ######################################################Data##############################################################
 
 #df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/mba_dash.csv")
-df = pd.read_csv("C:/Users/migue/Desktop/mba_dash.csv")
-
+#df = pd.read_csv("C:/Users/migue/Desktop/mba_dash.csv")
+df = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/mba_dash.csv")
 ######################################################Interactive Components############################################
 
 pos_options = [dict(label=pos, value=pos) for pos in df['Point-of-Sale_ID'].dropna().unique()]
-
 pos_dropdown = dcc.Dropdown(
     id='pos_drop',
     options=pos_options,
