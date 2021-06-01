@@ -17,8 +17,8 @@ import EDA
 
 ######################################################Data##############################################################
 
-df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/eda_dash.csv")
-#df = pd.read_csv('C:/Users/migue/Desktop/eda_dash.csv')
+#df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/eda_dash.csv")
+df = pd.read_csv('C:/Users/migue/Desktop/eda_dash.csv')
 
 df["Year"] = df["Date"].str.split("-").str[0]
 df['Date'] = pd.to_datetime(df['Date'])
@@ -153,7 +153,7 @@ def graph_1(pos, quarter, year, option):
     fig.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)', xaxis_title="Date",
                        yaxis_title=option)
     fig.update_traces(
-        hovertemplate='Date: %{x} <br>'+option+' Sold: %{y} <extra></extra>')
+        hovertemplate='Date: %{x} <br>Units Sold: %{y} <extra></extra>')
     return fig
 
 
@@ -179,7 +179,7 @@ def graph_2(pos, quarter, year, option):
     fig2.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)', xaxis_title="ProductFamilyID",
     yaxis_title=option)
     fig2.update_traces(
-        hovertemplate='ProductFamilyID: %{x} <br>'+option+' Sold: %{y} <extra></extra>')
+        hovertemplate='ProductFamilyID: %{x} <br>Units Sold: %{y} <extra></extra>')
     return fig2
 
 @app.callback(
