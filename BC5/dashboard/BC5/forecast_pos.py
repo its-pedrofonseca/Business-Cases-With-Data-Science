@@ -18,8 +18,8 @@ import EDA
 ######################################################Data##############################################################
 
 #vdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/unit_df.csv')
-#vdf = pd.read_csv('C:/Users/migue/Desktop/unit_df.csv')
-vdf = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/unit_df.csv")
+vdf = pd.read_csv('C:/Users/migue/Desktop/Datasets/unit_df.csv')
+#vdf = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/unit_df.csv")
 vdf['week'] = pd.to_datetime(vdf['week'], format='%Y-%m-%d')
 
 ######################################################Interactive Components############################################
@@ -116,6 +116,10 @@ def graph_pred(pos):
     figpos.add_trace(go.Scatter(x=predictions.index, y=predictions,
                              mode='lines',
                              name='Predictions'))
+    figpos.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
+    figpos.update_xaxes(showline=True, linewidth=1, linecolor='black')
+    figpos.update_yaxes(showline=True, linewidth=1, linecolor='black')
+    figpos.update_xaxes(showgrid=True, gridwidth=0.1, gridcolor='lightskyblue')
     return figpos
 
 @app.callback(

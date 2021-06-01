@@ -17,9 +17,8 @@ import EDA
 
 ######################################################Data##############################################################
 #pdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/product_df.csv')
-
-#pdf = pd.read_csv('C:/Users/migue/Desktop/product_df.csv')
-pdf= pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/product_df.csv")
+pdf = pd.read_csv('C:/Users/migue/Desktop/Datasets/product_df.csv')
+#pdf= pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/product_df.csv")
 pdf['week'] = pd.to_datetime(pdf['week'], format='%Y-%m-%d')
 
 weekly=pdf.groupby('week')['Units'].sum()[1:-1]
@@ -129,6 +128,10 @@ def graph_pred(pid):
                              mode='lines',
                              name='Predictions'))
 
+    prod_forecast.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
+    prod_forecast.update_xaxes(showline=True, linewidth=1, linecolor='black')
+    prod_forecast.update_yaxes(showline=True, linewidth=1, linecolor='black')
+    prod_forecast.update_xaxes(showgrid=True, gridwidth=0.1, gridcolor='lightskyblue')
     return prod_forecast
 
 @app.callback(

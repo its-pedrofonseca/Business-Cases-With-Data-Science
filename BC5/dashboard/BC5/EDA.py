@@ -16,16 +16,10 @@ import EDA
 # https://htmlcheatsheet.com/css/
 
 ######################################################Data##############################################################
-
-<<<<<<< HEAD
 #df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/eda_dash.csv")
-#df = pd.read_csv('C:/Users/migue/Desktop/eda_dash.csv')
-df = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/eda_dash.csv")
-=======
-df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/eda_dash.csv")
-#df = pd.read_csv('C:/Users/migue/Desktop/eda_dash.csv')
+df = pd.read_csv('C:/Users/migue/Desktop/Datasets/eda_dash.csv')
+#df = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/eda_dash.csv")
 
->>>>>>> 700c0b4360ef7af64ab55a232b4a2c4ca555f28e
 df["Year"] = df["Date"].str.split("-").str[0]
 df['Date'] = pd.to_datetime(df['Date'])
 

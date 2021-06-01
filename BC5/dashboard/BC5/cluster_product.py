@@ -12,25 +12,31 @@ import plotly.express as px
 from app import app
 from app import server
 import EDA
-df = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/pca_product.csv")
-product = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/final_product.csv")
+#df = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/pca_product.csv")
+#product = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/final_product.csv")
+df = pd.read_csv("C:/Users/migue/Desktop/Datasets/pca_product.csv")
+product = pd.read_csv("C:/Users/migue/Desktop/Datasets/final_product.csv")
+
 product.set_index('Point-of-Sale_ID',inplace=True)
 df.set_index('Point-of-Sale_ID',inplace=True)
 
 def scatter_plot_product():
     fig = px.scatter(df, x="PC0", y="PC1", color="cluster_product", hover_data=[df.index])
+    fig.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
     return fig
 
 def count_label(df,label,columnToCount):
     d ={'Cluster':df.groupby(label)[columnToCount].count().index,'Count':df.groupby(label)[columnToCount].count().values}
     df =pd.DataFrame(data=d )
     fig = px.bar(df, x='Cluster', y='Count')
+    fig.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
     return fig
 
 def plot_top10(clusterNumber):
     d ={'Products':product[product['cluster_product']==clusterNumber].mean().sort_values(ascending=False).head(10).index,'Mean Sold':product[product['cluster_product']==clusterNumber].mean().sort_values(ascending=False).head(10).values}
     df =pd.DataFrame(data=d )
     fig = px.bar(df, y='Products', x='Mean Sold',title = 'Top 10 products from cluster '+ str(clusterNumber),orientation='h')
+    fig.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
     return fig
 
 layout = dbc.Container([

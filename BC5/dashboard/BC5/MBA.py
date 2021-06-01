@@ -13,8 +13,8 @@ from app import app
 ######################################################Data##############################################################
 
 #df = pd.read_csv("C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/mba_dash.csv")
-#df = pd.read_csv("C:/Users/migue/Desktop/mba_dash.csv")
-df = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/mba_dash.csv")
+df = pd.read_csv("C:/Users/migue/Desktop/Datasets/mba_dash.csv")
+#df = pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/mba_dash.csv")
 ######################################################Interactive Components############################################
 
 pos_options = [dict(label=pos, value=pos) for pos in df['Point-of-Sale_ID'].dropna().unique()]
@@ -132,12 +132,12 @@ def graph_1(pos, quarter, year):
                         )
 
     layout = dict(
-        #paper_bgcolor='rgba(0,0,0,0)',
+        #paper_bgcolor='rgba(255,255,255',
         #plot_bgcolor='rgba(0,0,0,0)',
         xaxis_title="Lift",
         yaxis_title="Confidence"
     )
 
     mbafig = go.Figure(data=data_scatter, layout=layout)
-
+    mbafig.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
     return mbafig

@@ -16,8 +16,8 @@ from app import app
 ######################################################Data##############################################################
 
 #fdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/forecast_pos_pid_dash.csv')
-#fdf = pd.read_csv('C:/Users/migue/Desktop/forecast_pos_pid_dash.csv')
-fdf= pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/forecast_pos_pid_dash.csv")
+fdf = pd.read_csv('C:/Users/migue/Desktop/Datasets/forecast_pos_pid_dash.csv')
+#fdf= pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/forecast_pos_pid_dash.csv")
 fdf['week'] = pd.to_datetime(fdf['week'], format='%Y-%m-%d')
 
 weekly=fdf.groupby('week')['Units'].sum()[1:-1]
@@ -138,6 +138,10 @@ def forecast_by_POS_and_PID(pos, pid):
     fig_all.add_trace(go.Scatter(x=predictions.index, y=predictions,
                              mode='lines',
                              name='Predictions'))
+    fig_all.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
+    fig_all.update_xaxes(showline=True, linewidth=1, linecolor='black')
+    fig_all.update_yaxes(showline=True, linewidth=1, linecolor='black')
+    fig_all.update_xaxes(showgrid=True, gridwidth=0.1, gridcolor='lightskyblue')
 
     return fig_all
 

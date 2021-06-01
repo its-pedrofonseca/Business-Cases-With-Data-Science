@@ -25,7 +25,7 @@ nav_item_MBA = dbc.NavItem(dbc.NavLink("MBA", href="/MBA", active="exact"))
 nav_item_forecast = dbc.NavItem(dbc.NavLink("Forecast", href="/forecast", active="exact"))
 nav_item_forecast_pos = dbc.NavItem(dbc.NavLink("Forecast(POS)", href="/forecast_pos", active="exact"))
 nav_item_forecast_prod = dbc.NavItem(dbc.NavLink("Forecast(Prod)", href="/forecast_prod", active="exact"))
-nav_item_cluster_pos = dbc.NavItem(dbc.NavLink("Cluster (PoS)", href="/cluster_pos", active="exact"))
+#nav_item_cluster_pos = dbc.NavItem(dbc.NavLink("Cluster (PoS)", href="/cluster_pos", active="exact"))
 nav_item_cluster_value = dbc.NavItem(dbc.NavLink("Cluster Value", href="/cluster_value", active="exact"))
 nav_item_cluster_product = dbc.NavItem(dbc.NavLink("Cluster Product", href="/cluster_product", active="exact"))
 
@@ -55,7 +55,8 @@ logo = dbc.Navbar(
                 dbc.Nav(
                     [nav_item_EDA, nav_item_MBA, nav_item_forecast,nav_item_forecast_pos,
                      nav_item_forecast_prod,
-                     nav_item_cluster_pos, nav_item_cluster_value,
+                     #nav_item_cluster_pos,
+                     nav_item_cluster_value,
                      nav_item_cluster_product], className="ml-auto", navbar=True
                 ),
                 id="navbar-collapse2",
@@ -89,8 +90,8 @@ def render_page_content(pathname):
         return forecast_pos.layout
     elif pathname == "/forecast_prod":
         return forecast_prod.layout
-    elif pathname == "/cluster_pos":
-        return cluster_pos.layout
+    #elif pathname == "/cluster_pos":
+    #    return cluster_pos.layout
     elif pathname == "/cluster_value":
         return cluster_value.layout
     elif pathname == "/cluster_product":

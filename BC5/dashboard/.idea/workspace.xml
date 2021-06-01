@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e6468af-6744-4d4e-a0cc-e73e31ed9d5d" name="Default Changelist" comment="Update Forecast - POS - Dash">
-      <change afterPath="$PROJECT_DIR$/../EDA.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Forecast.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Forecast.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MBA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../MBA.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BC5/assets/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dashboard.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BC5/EDA.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/EDA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/MBA.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/MBA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/cluster_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/cluster_product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/cluster_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/cluster_value.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/forecast.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/forecast_pos.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast_pos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/forecast_prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast_prod.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BC5/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/index.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +48,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BC5/assets" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\migue\Desktop\Github\Business-Cases-With-Data-Science\BC5\dashboard\BC5\assets" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.index (1)">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -205,8 +218,5 @@
     <MESSAGE value="Update Forecast - Dash" />
     <MESSAGE value="Update Forecast - POS - Dash" />
     <option name="LAST_COMMIT_MESSAGE" value="Update Forecast - POS - Dash" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dashboard$index__1_.coverage" NAME="index (1) Coverage Results" MODIFIED="1622561468386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
