@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e6468af-6744-4d4e-a0cc-e73e31ed9d5d" name="Default Changelist" comment="Update Forecast - POS - Dash">
-      <change beforePath="$PROJECT_DIR$/../Forecast.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Forecast.ipynb" afterDir="false" />
+    <list default="true" id="5e6468af-6744-4d4e-a0cc-e73e31ed9d5d" name="Default Changelist" comment="Update Forecast &amp; Dash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BC5/forecast.py" beforeDir="false" afterPath="$PROJECT_DIR$/BC5/forecast.py" afterDir="false" />
     </list>
@@ -186,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621979429514</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update Forecast &amp; Dash">
+      <created>1622648781340</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1622648781340</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +214,7 @@
     <MESSAGE value="Update Forecast - Dash e IPYNB" />
     <MESSAGE value="Update Forecast - Dash" />
     <MESSAGE value="Update Forecast - POS - Dash" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Forecast - POS - Dash" />
+    <MESSAGE value="Update Forecast &amp; Dash" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Forecast &amp; Dash" />
   </component>
 </project>

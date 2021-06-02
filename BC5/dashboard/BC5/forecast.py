@@ -16,7 +16,7 @@ from app import app
 ######################################################Data##############################################################
 
 #fdf = pd.read_csv('C:/Users/Pedro/Desktop/Business Cases/BC5/Datasets/forecast_pos_pid_dash.csv')
-fdf = pd.read_csv('C:/Users/migue/Desktop/Datasets/forecast_pos_pid_dash.csv')
+fdf = pd.read_csv('C:/Users/migue/Desktop/Datasets/forecast_df.csv')
 #fdf= pd.read_csv("C:/Users/bruno/OneDrive/Ambiente de Trabalho/Datasets/forecast_pos_pid_dash.csv")
 fdf['week'] = pd.to_datetime(fdf['week'], format='%Y-%m-%d')
 
@@ -188,8 +188,8 @@ def kpi_by_POS_and_PID(pos, pid):
         model_fit = model.fit()
         # Get the predictions and residuals
         predictions = model_fit.forecast(steps=len(test_data))
-        predictions = pd.Series(predictions, index=test_data.index)
-    residuals = test_data.values - predictions.values,
+        #predictions = pd.Series(predictions, index=test_data.index)
+    residuals = test_data- predictions,
 
     MAPE_all = str(round(np.mean(abs(residuals / test_data)), 4)),
     RMSE_all = str(round(np.sqrt(np.mean(residuals ** 2)), 4))
