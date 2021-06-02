@@ -188,12 +188,12 @@ def kpi_by_POS_and_PID(pos, pid):
         model_fit = model.fit()
         # Get the predictions and residuals
         predictions = model_fit.forecast(steps=len(test_data))
-        #predictions_for_measures = pd.Series(predictions, index=test_data.index)
-    residuals = test_data - predictions,
+        predictions = pd.Series(predictions, index=test_data.index)
+    residuals = test_data.values - predictions.values,
 
     MAPE_all = str(round(np.mean(abs(residuals / test_data)), 4)),
     RMSE_all = str(round(np.sqrt(np.mean(residuals ** 2)), 4))
 
 
-    return str(0.0411),\
-           str(71.1136)
+    return str(MAPE_all),\
+           str(RMSE_all)
