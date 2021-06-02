@@ -35,8 +35,15 @@ def count_label(df,label,columnToCount):
 def plot_top10(clusterNumber):
     d ={'Products':product[product['cluster_product']==clusterNumber].mean().sort_values(ascending=False).head(10).index,'Mean Sold':product[product['cluster_product']==clusterNumber].mean().sort_values(ascending=False).head(10).values}
     df =pd.DataFrame(data=d )
-    fig = px.bar(df, y='Products', x='Mean Sold',title = 'Top 10 products from cluster '+ str(clusterNumber),orientation='h')
-    fig.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
+    if clusterNumber == 0:
+        fig = px.bar(df, y='Products', x='Mean Sold',title = 'Top 10 products from cluster 0 - High Quantity',orientation='h')
+        fig.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
+    elif clusterNumber == 1:
+        fig = px.bar(df, y='Products', x='Mean Sold',title = 'Top 10 products from cluster 1 - Medium Quantity',orientation='h')
+        fig.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
+    else:
+        fig = px.bar(df, y='Products', x='Mean Sold',title = 'Top 10 products from cluster 2 - Low Quantity',orientation='h')
+        fig.update_layout(paper_bgcolor='rgba(255,255,255)', plot_bgcolor='rgba(0,0,0,0)')
     return fig
 
 layout = dbc.Container([

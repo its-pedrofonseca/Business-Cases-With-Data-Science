@@ -39,7 +39,7 @@ layout = dbc.Container([
         dbc.Col([
             dbc.Card(
                 dbc.CardBody([
-                    html.H4('Cluster 0', className='text-white',style={'text-align': 'center'}),
+                    html.H4('Cluster 0 - High Value', className='text-white',style={'text-align': 'center'}),
                     dbc.ListGroup([
                         dbc.ListGroupItem(round(value[value['cluster_value']==0].mean().mean()))
                     ],style={'text-align': 'center'})
@@ -50,7 +50,7 @@ layout = dbc.Container([
         dbc.Col([
             dbc.Card(
                 dbc.CardBody([
-                    html.H4('Cluster 1', className='text-white', style={'text-align': 'center'}),
+                    html.H4('Cluster 1 - Medium Value', className='text-white', style={'text-align': 'center'}),
                     dbc.ListGroup([
                         dbc.ListGroupItem(round(value[value['cluster_value'] == 1].mean().mean()))
                     ],style={'text-align': 'center'})
@@ -61,7 +61,7 @@ layout = dbc.Container([
         dbc.Col([
             dbc.Card(
                 dbc.CardBody([
-                    html.H4('Cluster 2', className='text-white', style={'text-align': 'center'}),
+                    html.H4('Cluster 2 - Low Value', className='text-white', style={'text-align': 'center'}),
                     dbc.ListGroup([
                         dbc.ListGroupItem(round(value[value['cluster_value'] == 2].mean().mean()))
                     ],style={'text-align': 'center'})
