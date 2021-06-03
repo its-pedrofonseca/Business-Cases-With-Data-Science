@@ -3,4 +3,9 @@ data_preprocess.csv
 unit_df.csv
 product_df.csv
 final_product.csv
+clusters.csv
+pca_value.csv
+pca_product.csv
+cluster_value.csv
+cluster_product.csv
 final_value.csv
