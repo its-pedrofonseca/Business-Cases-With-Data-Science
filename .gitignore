@@ -9,3 +9,6 @@ pca_product.csv
 cluster_value.csv
 cluster_product.csv
 final_value.csv
+BC5/cluster_product.csv
+BC5/clusters.csv
+*.csv
